@@ -1,0 +1,1073 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071a2e">
+<meta name="description" content="Naija News — Nigerian headlines, politics, business, sports, entertainment and technology updates.">
+<title>Naija News | Information. Truth. Updates.</title>
+
+<style>
+:root {
+    --navy: #071a2e;
+    --navy-2: #102b49;
+    --red: #e63946;
+    --gold: #ffc857;
+    --ink: #182333;
+    --muted: #6c7888;
+    --paper: #f3f6fa;
+    --line: #e5eaf0;
+    --white: #fff;
+    --radius: 16px;
+    --shadow: 0 10px 30px rgba(7, 26, 46, .07);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+}
+
+.topline {
+    background: var(--navy);
+    color: #d9e3ef;
+    padding: 8px max(5%, calc((100% - 1240px) / 2));
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+    font-size: 12px;
+}
+
+.topline strong {
+    color: var(--gold);
+    letter-spacing: .08em;
+}
+
+.masthead {
+    background: white;
+    padding: 22px max(5%, calc((100% - 1240px) / 2));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.brand {
+    text-decoration: none;
+    display: inline-block;
+}
+
+.brand-name {
+    font-weight: 900;
+    font-size: clamp(26px, 3vw, 36px);
+    letter-spacing: -.06em;
+    color: var(--navy);
+    line-height: 1.1;
+}
+
+.brand-name span {
+    color: var(--red);
+}
+
+.brand-tagline {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 5px;
+    letter-spacing: .04em;
+}
+
+.masthead-note {
+    color: var(--muted);
+    font-size: 13px;
+    text-align: right;
+}
+
+.masthead-note b {
+    display: block;
+    color: var(--navy);
+    font-size: 14px;
+}
+
+.nav-wrap {
+    background: var(--navy-2);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 5px 18px rgba(7,26,46,.12);
+}
+
+nav {
+    max-width: 1240px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    white-space: nowrap;
+}
+
+nav a {
+    color: #eaf1f8;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 15px 13px;
+    display: inline-block;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--gold);
+}
+
+nav .nav-home {
+    color: var(--gold);
+}
+
+.breaking {
+    background: var(--red);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 10px max(5%, calc((100% - 1240px) / 2));
+    font-size: 13px;
+}
+
+.breaking-label {
+    background: white;
+    color: var(--red);
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .08em;
+    padding: 4px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.container {
+    max-width: 1240px;
+    margin: 28px auto 0;
+    padding: 0 20px;
+}
+
+.search-box {
+    margin: 0 0 26px;
+}
+
+.search-box form {
+    display: flex;
+    gap: 10px;
+    background: white;
+    padding: 9px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.search-box input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    padding: 10px 14px;
+    font: inherit;
+    background: transparent;
+}
+
+.search-box input:focus {
+    box-shadow: inset 0 0 0 2px #dbe7f3;
+    border-radius: 7px;
+}
+
+.search-box button {
+    border: 0;
+    border-radius: 9px;
+    background: var(--red);
+    color: white;
+    font-weight: 800;
+    padding: 11px 24px;
+    cursor: pointer;
+}
+
+.search-box button:hover {
+    background: #c92e3a;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 0 0 18px;
+}
+
+.section-title {
+    font-size: 22px;
+    line-height: 1.25;
+    font-weight: 850;
+    color: var(--navy);
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.section-title::before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 25px;
+    background: var(--red);
+    border-radius: 4px;
+}
+
+.section-kicker {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(260px, .9fr);
+    gap: 22px;
+    margin-bottom: 34px;
+}
+
+.hero-main {
+    position: relative;
+    min-height: 390px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #102b49, #071a2e);
+    color: white;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero-main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(4,13,24,.93) 0%,
+        rgba(4,13,24,.45) 52%,
+        rgba(4,13,24,.04) 100%
+    );
+    pointer-events: none;
+}
+
+.hero-main img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding: clamp(22px, 4vw, 38px);
+    width: 100%;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin-bottom: 13px;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 18px;
+    height: 2px;
+    background: var(--gold);
+}
+
+.hero-content h1 {
+    font-size: clamp(25px, 3.2vw, 39px);
+    line-height: 1.2;
+    letter-spacing: -.025em;
+    margin-bottom: 16px;
+    max-width: 760px;
+}
+
+.hero-content .hero-meta {
+    color: #d4deea;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.read-link {
+    color: white;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.read-link:hover {
+    color: var(--gold);
+}
+
+.hero-side {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.hero-side-card {
+    flex: 1;
+    min-height: 115px;
+    display: grid;
+    grid-template-columns: 105px 1fr;
+    gap: 14px;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 12px;
+    box-shadow: var(--shadow);
+}
+
+.hero-side-card img {
+    width: 105px;
+    height: 100%;
+    min-height: 95px;
+    object-fit: cover;
+    border-radius: 9px;
+    background: #e5eaf0;
+}
+
+.hero-side-card h3 {
+    color: var(--navy);
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 4px 0 8px;
+}
+
+.hero-side-card .meta {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.hero-side-card a {
+    text-decoration: none;
+}
+
+.hero-side-card a:hover h3 {
+    color: var(--red);
+}
+
+.category-strip {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 13px;
+    margin: 0 0 38px;
+}
+
+.category-tile {
+    position: relative;
+    height: 145px;
+    overflow: hidden;
+    border-radius: 13px;
+    text-decoration: none;
+    background: var(--navy);
+    box-shadow: var(--shadow);
+}
+
+.category-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .35s;
+}
+
+.category-tile:hover img {
+    transform: scale(1.06);
+}
+
+.category-tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(4,13,24,.82), transparent 85%);
+}
+
+.category-tile span {
+    position: absolute;
+    bottom: 13px;
+    left: 15px;
+    color: white;
+    font-weight: 900;
+    z-index: 1;
+    font-size: 16px;
+}
+
+.category-section {
+    margin-bottom: 42px;
+    scroll-margin-top: 85px;
+}
+
+.category-section .category-news-title {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0 15px;
+}
+
+.news-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 26px;
+    align-items: start;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.news-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(7,26,46,.045);
+    transition: transform .2s, box-shadow .2s;
+    min-width: 0;
+}
+
+.news-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.news-card-image {
+    width: 100%;
+    height: 195px;
+    object-fit: cover;
+    display: block;
+    background: #e8edf2;
+}
+
+.news-card-body {
+    padding: 16px;
+}
+
+.news-card h3 {
+    font-size: 16px;
+    line-height: 1.45;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+.news-card h3 a {
+    text-decoration: none;
+}
+
+.news-card h3 a:hover {
+    color: var(--red);
+}
+
+.news-meta {
+    color: var(--muted);
+    font-size: 11px;
+    margin-bottom: 13px;
+}
+
+.news-card .card-read {
+    display: inline-block;
+    color: var(--red);
+    font-size: 12px;
+    font-weight: 900;
+    text-decoration: none;
+}
+
+.news-card .card-read:hover {
+    text-decoration: underline;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.sidebar-panel {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+.sidebar-panel h3 {
+    color: var(--navy);
+    font-size: 16px;
+    margin-bottom: 13px;
+}
+
+.source-list {
+    list-style: none;
+}
+
+.source-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 13px;
+    color: #465367;
+}
+
+.source-list li:last-child {
+    border-bottom: 0;
+}
+
+.source-dot {
+    color: var(--red);
+    margin-right: 8px;
+}
+
+.sidebar-note {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.search-results {
+    margin: 0 0 35px;
+    scroll-margin-top: 85px;
+}
+
+.search-count {
+    color: var(--muted);
+    font-size: 13px;
+    margin: -5px 0 18px;
+}
+
+.no-results {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px;
+    color: var(--muted);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 28px 0;
+    flex-wrap: wrap;
+}
+
+.pagination a {
+    text-decoration: none;
+    background: var(--navy-2);
+    color: white;
+    padding: 9px 17px;
+    border-radius: 7px;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.pagination a:hover {
+    background: var(--red);
+}
+
+.pagination span {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--ink);
+}
+
+footer {
+    background: var(--navy);
+    color: #dbe5ef;
+    margin-top: 55px;
+    padding: 38px 20px;
+    text-align: center;
+}
+
+.footer-brand {
+    font-size: 22px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: -.04em;
+    margin-bottom: 6px;
+}
+
+.footer-brand span {
+    color: var(--red);
+}
+
+footer p {
+    font-size: 13px;
+    color: #aebdce;
+    margin: 5px 0;
+}
+
+.back-top {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+@media (max-width: 900px) {
+    .hero {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-main {
+        min-height: 340px;
+    }
+
+    .hero-side {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .category-strip {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .news-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .topline {
+        padding: 7px 16px;
+        font-size: 10px;
+    }
+
+    .topline span:last-child {
+        display: none;
+    }
+
+    .masthead {
+        padding: 17px 16px;
+    }
+
+    .masthead-note {
+        display: none;
+    }
+
+    nav {
+        padding: 0 8px;
+    }
+
+    nav a {
+        padding: 13px 11px;
+        font-size: 12px;
+    }
+
+    .breaking {
+        padding: 9px 15px;
+        font-size: 11px;
+    }
+
+    .container {
+        padding: 0 14px;
+        margin-top: 19px;
+    }
+
+    .search-box form {
+        gap: 6px;
+    }
+
+    .search-box button {
+        padding: 10px 16px;
+    }
+
+    .hero-main {
+        min-height: 320px;
+    }
+
+    .hero-content {
+        padding: 22px;
+    }
+
+    .hero-content h1 {
+        font-size: 25px;
+    }
+
+    .hero-side {
+        display: flex;
+    }
+
+    .hero-side-card {
+        grid-template-columns: 90px 1fr;
+    }
+
+    .hero-side-card img {
+        width: 90px;
+    }
+
+    .category-strip {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .category-tile {
+        height: 125px;
+    }
+
+    .category-tile span {
+        font-size: 14px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .news-card-image {
+        height: 205px;
+    }
+
+    .sidebar {
+        display: flex;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topline">
+    <span><strong>NAIJA NEWS</strong> &nbsp; Your trusted source for Nigerian news and updates</span>
+    <span>Information. Truth. Updates.</span>
+</div>
+
+<header class="masthead">
+    <a class="brand" href="/" aria-label="Naija News homepage">
+        <div class="brand-name">NAIJA <span>NEWS</span></div>
+        <div class="brand-tagline">Information. Truth. Updates.</div>
+    </a>
+
+    <div class="masthead-note">
+        <b>News that matters</b>
+        Nigerian stories, all in one place
+    </div>
+</header>
+
+<div class="nav-wrap">
+<nav aria-label="Main navigation">
+    <a class="nav-home" href="/">Home</a>
+    <a href="#latest">Latest News</a>
+    <a href="#politics">Politics</a>
+    <a href="#sports">Sports</a>
+    <a href="#business">Business</a>
+    <a href="#entertainment">Entertainment</a>
+    <a href="#technology">Technology</a>
+</nav>
+</div>
+
+<div class="breaking">
+    <span class="breaking-label">LATEST</span>
+    <span>Stay informed with the latest Nigerian stories and updates</span>
+</div>
+
+<div class="container">
+
+    <div class="search-box">
+        <form action="/" method="GET" role="search">
+            <input type="search" name="q" id="searchInput"
+                   placeholder="Search headlines, topics or stories..."
+                   value="{{ search_term|default('') }}" required>
+            <button type="submit">Search News</button>
+        </form>
+    </div>
+
+    {% if search_term %}
+    <section class="search-results" id="searchResults">
+        <div class="section-heading">
+            <h2 class="section-title">Search Results</h2>
+            <span class="section-kicker">For “{{ search_term }}”</span>
+        </div>
+
+        <p class="search-count">Found {{ total_results }} article(s).</p>
+
+        {% if search_results %}
+        <div class="news-grid">
+            {% for article in search_results %}
+            <article class="news-card">
+                <img class="news-card-image"
+                     src="{{ article.image or url_for('static', filename='images/news/default-news.jpg') }}"
+                     alt="{{ article.title }}" loading="lazy"
+                     onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/news/default-news.jpg') }}';">
+
+                <div class="news-card-body">
+                    <h3><a href="{{ article.link }}" rel="noopener noreferrer">{{ article.title }}</a></h3>
+                    <p class="news-meta">{{ article.source }} · {{ article.published }}</p>
+                    <a class="card-read" href="{{ article.link }}" rel="noopener noreferrer">Read full story →</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        {% if total_pages > 1 %}
+        <div class="pagination">
+            {% if page > 1 %}
+            <a href="{{ url_for('home', q=search_term, page=page-1) }}">← Previous</a>
+            {% endif %}
+
+            <span>Page {{ page }} of {{ total_pages }}</span>
+
+            {% if page < total_pages %}
+            <a href="{{ url_for('home', q=search_term, page=page+1) }}">Next →</a>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        {% else %}
+        <p class="no-results">No matching articles were found. Try another search keyword.</p>
+        {% endif %}
+    </section>
+    {% endif %}
+
+    <section class="hero" aria-label="Top stories">
+
+        <div class="hero-main">
+            {% if articles %}
+                <img src="{{ articles[0].image or url_for('static', filename='images/news/default-news.jpg') }}"
+                     loading="eager" fetchpriority="high"
+                     onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/news/default-news.jpg') }}';">
+
+                <div class="hero-content">
+                    <span class="eyebrow">Top Story</span>
+                    <h1>{{ articles[0].title }}</h1>
+                    <p class="hero-meta">{{ articles[0].source }} · {{ articles[0].published }}</p>
+                    <a class="read-link" href="{{ articles[0].link }}" rel="noopener noreferrer">
+                        Read Full Story <span>→</span>
+                    </a>
+                </div>
+
+            {% else %}
+                <div class="hero-content">
+                    <span class="eyebrow">Welcome</span>
+                    <h1>Welcome to Naija News</h1>
+                    <p>Latest Nigerian news and updates in one place.</p>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="hero-side">
+            {% for article in articles[1:3] %}
+            <article class="hero-side-card">
+                <a href="{{ article.link }}" rel="noopener noreferrer">
+                    <img src="{{ article.image or url_for('static', filename='images/news/default-news.jpg') }}"
+                         alt="{{ article.title }}" loading="lazy"
+                         onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/news/default-news.jpg') }}';">
+                </a>
+
+                <div>
+                    <p class="meta">{{ article.source }} · {{ article.published }}</p>
+                    <a href="{{ article.link }}" rel="noopener noreferrer">
+                        <h3>{{ article.title }}</h3>
+                    </a>
+                    <a class="card-read" href="{{ article.link }}" rel="noopener noreferrer">Read story →</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section class="category-strip" aria-label="Browse news categories">
+
+        <a class="category-tile" href="#politics">
+            <img src="{{ url_for('static', filename='images/news/politics/politics.jpg') }}" alt="Politics" loading="lazy">
+            <span>Politics</span>
+        </a>
+
+        <a class="category-tile" href="#sports">
+            <img src="{{ url_for('static', filename='images/news/sports/sports.jpg') }}" alt="Sports" loading="lazy">
+            <span>Sports</span>
+        </a>
+
+        <a class="category-tile" href="#business">
+            <img src="{{ url_for('static', filename='images/news/business/business.jpg') }}" alt="Business" loading="lazy">
+            <span>Business</span>
+        </a>
+
+        <a class="category-tile" href="#entertainment">
+            <img src="{{ url_for('static', filename='images/news/entertainment/entertainment.jpg') }}" alt="Entertainment" loading="lazy">
+            <span>Entertainment</span>
+        </a>
+
+        <a class="category-tile" href="#technology">
+            <img src="{{ url_for('static', filename='images/news/technology/technology.jpg') }}" alt="Technology" loading="lazy">
+            <span>Technology</span>
+        </a>
+
+    </section>
+
+    {% for category, display_name, description in [
+        ('politics', 'Politics', 'Follow Nigerian political news and developments.'),
+        ('sports', 'Sports', 'Follow Nigerian and international sports stories.'),
+        ('business', 'Business', 'Business, finance and economic news.'),
+        ('entertainment', 'Entertainment', 'Music, movies, celebrities and culture.'),
+        ('technology', 'Technology', 'Technology, innovation and digital news.')
+    ] %}
+
+    <section class="category-section" id="{{ category }}">
+
+        <div class="section-heading">
+            <h2 class="section-title">{{ display_name }}</h2>
+            <span class="section-kicker">{{ description }}</span>
+        </div>
+
+        <p class="category-news-title">Latest {{ display_name }} News</p>
+
+        {% if categories.get(category, []) %}
+        <div class="news-grid">
+
+            {% for article in categories.get(category, []) %}
+            <article class="news-card">
+
+                <a href="{{ article.link }}" rel="noopener noreferrer">
+                    <img class="news-card-image"
+                         src="{{ article.image or url_for('static', filename='images/news/default-news.jpg') }}"
+                         alt="{{ article.title }}" loading="lazy"
+                         onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/news/default-news.jpg') }}';">
+                </a>
+
+                <div class="news-card-body">
+                    <h3><a href="{{ article.link }}" rel="noopener noreferrer">{{ article.title }}</a></h3>
+                    <p class="news-meta">{{ article.source }} · {{ article.published }}</p>
+                    <a class="card-read" href="{{ article.link }}" rel="noopener noreferrer">Read full story →</a>
+                </div>
+
+            </article>
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+        <p class="no-results">No {{ display_name|lower }} articles available right now.</p>
+        {% endif %}
+
+    </section>
+    {% endfor %}
+
+    <div class="news-layout">
+
+        <main id="latest">
+
+            <div class="section-heading">
+                <h2 class="section-title">Latest News</h2>
+                <span class="section-kicker">Fresh headlines</span>
+            </div>
+
+            <div class="news-grid" id="newsGrid">
+
+                {% for article in articles[3:] %}
+                <article class="news-card">
+
+                    <a href="{{ article.link }}" rel="noopener noreferrer">
+                        <img class="news-card-image"
+                             src="{{ article.image or url_for('static', filename='images/news/default-news.jpg') }}"
+                             alt="{{ article.title }}" loading="lazy"
+                             onerror="this.onerror=null;this.src='{{ url_for('static', filename='images/news/default-news.jpg') }}';">
+                    </a>
+
+                    <div class="news-card-body">
+                        <h3><a href="{{ article.link }}" rel="noopener noreferrer">{{ article.title }}</a></h3>
+                        <p class="news-meta">{{ article.source }} · {{ article.published }}</p>
+                        <a class="card-read" href="{{ article.link }}" rel="noopener noreferrer">Read full story →</a>
+                    </div>
+
+                </article>
+                {% endfor %}
+
+            </div>
+        </main>
+
+        <aside class="sidebar">
+
+            <div class="sidebar-panel">
+                <h3>Our News Sources</h3>
+
+                <ul class="source-list">
+                    <li><span class="source-dot">●</span> Punch Newspapers</li>
+                    <li><span class="source-dot">●</span> Daily Post</li>
+                    <li><span class="source-dot">●</span> Premium Times</li>
+                    <li><span class="source-dot">●</span> Legit.ng</li>
+                </ul>
+
+                <p class="sidebar-note">
+                    More trusted sources coming soon. Headlines link to the original publishers.
+                </p>
+            </div>
+
+            <div class="sidebar-panel">
+                <h3>About Naija News</h3>
+
+                <p class="sidebar-note">
+                    Naija News brings Nigerian headlines and updates together in one convenient place.
+                    Explore stories across politics, business, sports, entertainment and technology.
+                </p>
+            </div>
+
+        </aside>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-brand">NAIJA <span>NEWS</span></div>
+    <p>Bringing Nigerian news closer to you.</p>
+    <p>© 2026 Naija News. All rights reserved.</p>
+    <a class="back-top" href="#">Back to top ↑</a>
+</footer>
+
+</body>
+</html>

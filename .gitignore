@@ -1,0 +1,33 @@
+# Python virtual environment
+venv/
+__pycache__/
+*.pyc
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Backups and temporary files
+*.backup
+*.bak
+*.before_*
+*.failed_replacement
+*.incomplete_image_fix
+*.save
+
+# News image cache
+article_image_cache.json
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+*.backup*
+templates/*backup*
